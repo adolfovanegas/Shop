@@ -33,6 +33,8 @@ namespace Shop.Web
 
             services.AddTransient<SeedDb>();
 
+            services.AddScoped<IRepository, Repository>();
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -46,8 +48,6 @@ namespace Shop.Web
             
 
         }
-
-          
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

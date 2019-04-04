@@ -4,12 +4,11 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-    
 
     public class SeedDb
     {
         private readonly DataContext context;
-        private Random random;
+        private readonly Random random;
 
         public SeedDb(DataContext context)
         {
@@ -21,7 +20,7 @@
         {
             await this.context.Database.EnsureCreatedAsync();
 
-            if (this.context.Products.Any())
+            if (!this.context.Products.Any())
             {
                 this.AddProduct("Camisa para Dama");
                 this.AddProduct("Camisa para Hombre");
