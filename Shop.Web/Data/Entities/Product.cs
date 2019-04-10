@@ -8,7 +8,7 @@ namespace Shop.Web.Data.Entities
     {
         public int Id { get; set; }
 
-        [MaxLength(50,ErrorMessage = "Maximo de {0}")]
+        [MaxLength(50, ErrorMessage = "Maximo de {0}")]
         [Required]
         public string Name { get; set; }
 
@@ -31,6 +31,16 @@ namespace Shop.Web.Data.Entities
         public double Stock { get; set; }
 
         public User User { get; set; }
+
+        public string ImageFullPath {
+            get {
+                if (string.IsNullOrEmpty(ImageUrl))
+                {
+                    return null;
+                }
+                return $"http://192.168.1.115/Shop{ImageUrl.Substring(1)}";
+            }
+        }
 
     }
 

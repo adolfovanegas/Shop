@@ -2,6 +2,8 @@
 {
     using Entities;
     using Microsoft.EntityFrameworkCore;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -54,6 +56,12 @@
         {
             return await this.context.SaveChangesAsync() > 0;
         }
+
+        public IEnumerable GetList()
+        {
+          return this.context.Set<T>().ToList();
+        }
+
     }
 
 }

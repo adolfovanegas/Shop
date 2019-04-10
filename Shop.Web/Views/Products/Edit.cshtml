@@ -1,4 +1,4 @@
-﻿@model Shop.Web.Data.Entities.Product
+﻿@model Shop.Web.Models.ProductViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -10,9 +10,11 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ImageUrl" />
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -24,9 +26,10 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" class="form-control" type="file" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <label asp-for="LastPurchase" class="control-label"></label>
@@ -52,13 +55,18 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
+                <a asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="col-md-4">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Url.Content(Model.ImageUrl)" alt="Image" style="width:200px;height:300px;max-width: 100%; height: auto;" />
+        }
+    </div>
+
 </div>
 
 @section Scripts {
