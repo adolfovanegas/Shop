@@ -4,11 +4,11 @@
 
     public class InstanceLocator
     {
-        public MainViewModel mainViewModel { get; set; }
+        public MainViewModel Main { get; set; }
 
         public InstanceLocator()
         {
-            mainViewModel = new MainViewModel();
+            this.Main = new MainViewModel();
         }
     }
 

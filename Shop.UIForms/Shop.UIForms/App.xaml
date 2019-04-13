@@ -6,8 +6,12 @@
     
     <Application.Resources>
         <ResourceDictionary>
+
+            <!-- Colores -->
+            <Color x:Key="FontColor"></Color>
+            <Color x:Key="colorBlanco"></Color>
             
-            <!-- Locator -->
+              <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"/>
             
         </ResourceDictionary>
