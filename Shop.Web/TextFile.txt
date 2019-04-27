@@ -1,4 +1,4 @@
-﻿Capitulo 21
+﻿Capitulo 26 Register
 
 
 Padding Left,Top,Rigth,bottom

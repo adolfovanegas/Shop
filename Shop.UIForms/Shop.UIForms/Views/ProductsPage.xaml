@@ -16,7 +16,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid Padding="0,3,0,4">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
@@ -28,17 +28,35 @@
                                 </Image>
                                 <StackLayout
                                     Grid.Column="1"
+                                    Padding="5"
                                     VerticalOptions="Center">
+                                    
                                     <Label
-                                        FontAttributes="Bold"
-                                        FontSize="Medium"
+                                        FontAttributes="Italic"
+                                        FontSize="18"
                                         Text="{Binding Name}"
                                         TextColor="Black">
                                     </Label>
-                                    <Label
-                                        Text="{Binding Price, StringFormat='{0:C2}'}"
-                                        TextColor="Black">
-                                    </Label>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label
+                                            Text="Precio: "
+                                            TextColor="Black">
+                                        </Label>
+                                        <Label
+                                            Text="{Binding Price,  StringFormat='{0:C2}'}"
+                                            TextColor="Black">
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label
+                                            Text="Stock: "
+                                            TextColor="Black">
+                                        </Label>
+                                        <Label
+                                            Text="{Binding Stock}"
+                                            TextColor="Black">
+                                        </Label>
+                                    </StackLayout>
                                 </StackLayout>
                             </Grid>
                         </ViewCell>
